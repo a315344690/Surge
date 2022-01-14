@@ -1,11 +1,24 @@
-#!name=NetflixSelect
-#!desc=通过panel显示及控制Netflix策略组
-
+#!name=Panels
+#!desc=信息面板
 
 [Panel]
+#Disney+策略组自动控制
+DisneySelect = script-name=DisneySelecter, update-interval=3600
+
+#Netflix策略组自动控制
 NetflixSelect = script-name=NetflixSelect, update-interval=3600
 
 
+
 [Script]
+#disney+策略组控制
+#应当修改的字段 disneyGroup Disney+的策略组名称
+#详情请阅读：https://github.com/fishingworld/something/tree/main/DisneySelect
+DisneySelecter = type=generic, script-path=https://raw.githubusercontent.com/fishingworld/something/main/DisneySelect/disney_selecter.js, argument=icon1=checkmark.circle&color1=#55ba94&icon2=cursorarrow.click.badge.clock&color2=#ed6c84&icon3=xmark.shield&color3=#AF52DE&disneyGroup=Disney+
+DisneyChecker = type=cron,cronexp=35 4 * * *,wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/fishingworld/something/main/DisneySelect/disney_checker.js,script-update-interval=86400,control-api=1
+
+#netflix策略组控制
+#必须更改的字段 netflixGroup 填写你Netflix策略组名称
+#详情请阅读：https://github.com/fishingworld/something/blob/main/NetflixSelect/README.md
 NetflixSelect = type=generic, script-path=https://raw.githubusercontent.com/fishingworld/something/main/NetflixSelect/nf_autoselect.js, argument=icon1=checkmark.circle&color1=#55ba94&icon2=checkmark.circle.trianglebadge.exclamationmark&color2=#9a9ced&icon3=hand.raised.circle&color3=#ea5532&netflixGroup=Netflix
-NetflixChecker = type=cron,cronexp=5 4 * * *,wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/fishingworld/something/main/NetflixSelect/nf_autocheck.js,script-update-interval=0,control-api=1
+NetflixChecker = type=cron,cronexp=5 4 * * *,wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/fishingworld/something/main/NetflixSelect/nf_autocheck.js ,script-update-interval=0,control-api=1
