@@ -1,0 +1,16 @@
+#!name=＞ Block Youtube
+#!desc=拦截YouTube
+
+[Rule]
+DOMAIN-SUFFIX,googlevideo.com,REJECT-DROP
+DOMAIN-SUFFIX,withyoutube.com,REJECT-DROP
+DOMAIN-SUFFIX,youtu.be,REJECT-DROP
+DOMAIN-SUFFIX,youtube.com,REJECT-DROP
+DOMAIN-SUFFIX,youtubeeducation.com,REJECT-DROP
+DOMAIN-SUFFIX,youtubegaming.com,REJECT-DROP
+DOMAIN-SUFFIX,youtubekids.com,REJECT-DROP
+DOMAIN-SUFFIX,youtube-nocookie.com,REJECT-DROP
+DOMAIN-SUFFIX,yt.be,REJECT-DROP
+DOMAIN-SUFFIX,ytimg.com,REJECT-DROP
+DOMAIN,youtubei.googleapis.com,REJECT-DROP
+DOMAIN,yt3.ggpht.com,REJECT-DROP
