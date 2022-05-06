@@ -1,0 +1,5 @@
+#!name=Block ShieldTV
+#!desc=拦截电视盒子
+
+[Rule]
+SRC-IP,10.0.0.6,REJECT-DROP
